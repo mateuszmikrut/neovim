@@ -1,0 +1,58 @@
+# Ignore swap files
+*.swp
+*.swo
+
+# Ignore backup files
+*.bak
+*~
+
+# Ignore undo files
+*.un~
+undodir/
+
+# Ignore compiled plugins
+pack/
+
+# Ignore plugin build artifacts
+build/
+dist/
+
+# Ignore node_modules from plugins
+node_modules/
+
+# Ignore lock files (keep lazy-lock.json for plugin management)
+package-lock.json
+yarn.lock
+
+# Ignore temporary files
+tmp/
+temp/
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore editor backup files
+#*.orig
+#*.rej
+
+# Ignore log files
+*.log
+
+# Ignore compiled Python files (if using Python plugins)
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore compiled Lua bytecode
+*.luac
+
+# Ignore local configuration overrides
+lua/local/
+lua/user/
