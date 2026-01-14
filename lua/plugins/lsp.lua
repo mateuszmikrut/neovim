@@ -1,40 +1,18 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    event = "BufReadPre",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-    },
-    config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "pyright",
-          "terraformls",
-          "bashls",
-          "yamlls",
-          "jsonls",
-          "gopls",
+  "neovim/nvim-lspconfig",
+  config = function()
+    -- Lua
+    vim.lsp.config("lua_ls", {
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim" },
+          },
         },
-      })
+      },
+    })
 
-      local lspconfig = require("lspconfig")
-
-      local servers = {
-        "lua_ls",
-        "pyright",
-        "terraformls",
-        "bashls",
-        "yamlls",
-        "jsonls",
-        "gopls",
-      }
-
-      for _, server in ipairs(servers) do
-        lspconfig[server].setup({})
-      end
-    end,
-  }
+    -- Enable it
+    vim.lsp.enable("lua_ls")
+  end,
 }
